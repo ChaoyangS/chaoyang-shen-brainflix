@@ -2,6 +2,82 @@
 @use "../../styles/partials/typography" as *;
 @use "../../styles/partials/variable" as *;
 
-h1 {
-  color: pink;
+.Header {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  @include tablet {
+    display: flex;
+  }
+
+  &__logoicon {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1rem;
+  }
+
+  &__logo {
+    width: 30%;
+    display: block;
+    @include tablet {
+      width: 150%;
+    }
+  }
+  &__searchsection {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 1rem;
+    @include tablet {
+      justify-content: center;
+    }
+  }
+
+  &__icon {
+    width: 2.25rem;
+
+    height: 2.25rem;
+    object-fit: cover;
+    border-radius: 50%;
+
+    @include tablet {
+      width: 2.5rem;
+      height: 2.5rem;
+      position: sticky;
+      left: 100rem;
+    }
+  }
+  &__search {
+    display: flex;
+    align-items: center;
+    background: url("../../assets/images/search.svg") no-repeat;
+    border-color: $SecondaryColor3;
+    border-style: solid;
+    border-radius: 0.25rem;
+    width: 25rem;
+    height: 2.25rem;
+
+    @include tablet {
+      height: 2.5rem;
+    }
+
+    &::placeholder {
+      padding-left: 30px;
+    }
+  }
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 100%;
+    background-color: $PrimaryColor2;
+    border: none;
+    border-radius: 0.25rem;
+    color: $PrimaryColor4;
+    @include tablet {
+      width: 10rem;
+    }
+  }
 }

@@ -1,3 +1,17 @@
 @use "../../styles/partials/global" as *;
 @use "../../styles/partials/typography" as *;
 @use "../../styles/partials/variable" as *;
+
+.Comments__icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  object-fit: cover;
+  border-radius: 50%;
+
+  @include tablet {
+    width: 2.5rem;
+    height: 2.5rem;
+
+    left: 100rem;
+  }
+}

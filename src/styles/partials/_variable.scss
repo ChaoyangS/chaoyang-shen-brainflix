@@ -1,0 +1,23 @@
+$PrimaryColor1: #323232;
+$PrimaryColor2: #0095ff;
+$PrimaryColor3: #afafaf;
+$PrimaryColor4: #ffffff;
+$SecondaryColor1: #000000;
+$SecondaryColor2: #0065ad;
+$SecondaryColor3: #e1e1e1;
+$SecondaryColor4: #fafafa;
+
+$mobile-breakpoint: 767px;
+$tablet-breakpoint: 1279px;
+
+@mixin desktop {
+  @media (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $mobile-breakpoint) {
+    @content;
+  }
+}
