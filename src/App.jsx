@@ -10,6 +10,9 @@ import Comments from "./components/Comments/Comments";
 function App() {
   console.log(VideoData);
   const [SelectedVideo, setSelectedVideo] = useState(VideoData[0]);
+  const handleVideoSelect = (video) => {
+    setSelectedVideo(video);
+  };
   const filteredVideos = VideoData.filter((video) => {
     return video.id !== SelectedVideo.id;
   });
@@ -19,7 +22,7 @@ function App() {
       <Header />
       <Video video={SelectedVideo} />
       <Comments comments={SelectedVideo.comments} />
-      <Next videosList={filteredVideos} />
+      <Next videosList={filteredVideos} handleVideoSelect={handleVideoSelect} />
     </>
   );
 }

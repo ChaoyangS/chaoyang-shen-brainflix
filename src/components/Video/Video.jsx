@@ -1,24 +1,54 @@
 import "./Video.scss";
 
+export function convertTime(timestamp) {
+  const date = new Date(timestamp);
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  const year = date.getFullYear();
+
+  return `${month}/${day}/${year}`;
+}
+
 export default function Video({ video }) {
   return (
     <>
-      <img src={video.image} alt="" />
-      <img src="../../src/assets/images/play.svg" alt="" />
-      <img src="../../src/assets/images/scrub.svg" alt="" />
-      <img src="../../src/assets/images/fullscreen.svg" alt="" />
-      <img src="../../src/assets/images/volume_up.svg" alt="" />
+      <div className="Video__section">
+        <video className="Video__image" controls poster={video.image}>
+          <source src="{video.video}" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
 
-      <h1>{video.title}</h1>
-      <hr />
-      <h3>By {video.channel}</h3>
-      <h4>{video.timestamp}</h4>
-      <img src="../../src/assets/images/views.svg" alt="" />
-      <h4>{video.views}</h4>
-      <img src="../../src/assets/images/likes.svg" alt="" />
-      <h4>{video.likes}</h4>
-      <hr />
-      <p>{video.description}</p>
+      <div className="Video__des">
+        <h1 className="Video__title">{video.title}</h1>
+        <hr />
+        <div className="Video__sub">
+          <div className="Video__author">
+            <h3 className="Video__channel">By {video.channel}</h3>
+            <h4 className="Video__time">{convertTime(video.timestamp)}</h4>
+          </div>
+          <div className="Video__viewlike">
+            <div className="Video__views">
+              <img
+                className="Video__viewsicon"
+                src="../../src/assets/images/views.svg"
+                alt=""
+              />
+              <h4 className="Video__viewstitle">{video.views}</h4>
+            </div>
+            <div className="Video__likes">
+              <img
+                className="Video__likesicon"
+                src="../../src/assets/images/likes.svg"
+                alt=""
+              />
+              <h4 className="Video__likestitle">{video.likes}</h4>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <p className="Video__description">{video.description}</p>
+      </div>
     </>
   );
 }

@@ -1,3 +1,84 @@
 @use "../../styles/partials/global" as *;
 @use "../../styles/partials/typography" as *;
 @use "../../styles/partials/variable" as *;
+
+.Video {
+  &__image {
+    width: 100%;
+    display: block;
+  }
+  &__section {
+    position: relative;
+    display: inline-block;
+  }
+
+  &__des {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+  }
+  &__sub {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: baseline;
+    }
+  }
+  &__author {
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+  &__channel {
+    @include mobileSubHeader;
+    color: $PrimaryColor1;
+    padding-right: 1rem;
+  }
+  &__time {
+    @include mobileBodyCopy;
+    font-weight: 400;
+    color: $PrimaryColor3;
+    @include tablet {
+      font-size: 1rem;
+    }
+  }
+  &__views,
+  &__likes {
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
+  }
+  &__viewsicon,
+  &__likesicon {
+    width: 1.5rem;
+
+    @include tablet {
+      width: 1.2rem;
+    }
+  }
+
+  &__viewstitle,
+  &__likestitle {
+    padding-left: 1rem;
+    @include mobileBodyCopy;
+    font-weight: 400;
+    color: $PrimaryColor3;
+
+    @include tablet {
+      font-size: 1rem;
+    }
+  }
+  &__viewlike {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include tablet {
+      flex-direction: row;
+    }
+  }
+}

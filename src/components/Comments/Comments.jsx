@@ -1,4 +1,5 @@
 import "./Comments.scss";
+import { convertTime } from "../Video/Video";
 
 export default function Comments({ comments }) {
   return (
@@ -27,7 +28,7 @@ export default function Comments({ comments }) {
             <>
               <img src="" alt="" />
               <h2>{comment.name}</h2>
-              <h3>{comment.timestamp}</h3>
+              <h3>{convertTime(comment.timestamp)}</h3>
               <p>{comment.comment}</p>
             </>
           );
