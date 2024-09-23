@@ -3,9 +3,66 @@
 @use "../../styles/partials/variable" as *;
 
 .Next {
+  &__title {
+    @include mobileSubHeader;
+    color: $PrimaryColor3;
+    font-weight: 500;
+    padding-left: 1rem;
+    padding-top: 1.5rem;
+
+    @include tablet {
+      @include desktopBodyCopy;
+      color: $PrimaryColor3;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+  }
   &__image {
-    width: 40%;
+    width: 30%;
     border-radius: 0.25rem;
+
+    @include tablet {
+      width: 12%;
+    }
+  }
+  &__ul {
+    padding: 1rem;
+  }
+  &__section {
     display: flex;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+  }
+  &__button {
+    width: 100%;
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__name {
+    @include mobileSubHeader;
+    font-weight: 500;
+
+    @include tablet {
+      font-size: 1rem;
+    }
+    @include desktop {
+      font-size: 0.8rem;
+    }
+  }
+  &__channel {
+    font-weight: 400;
+    @include tablet {
+      font-size: 1rem;
+    }
+    @include desktop {
+      font-size: 0.8rem;
+    }
   }
 }

@@ -21,7 +21,7 @@ export default function Video({ video }) {
 
       <div className="Video__des">
         <h1 className="Video__title">{video.title}</h1>
-        <hr />
+        <hr className="Divider Divider1" />
         <div className="Video__sub">
           <div className="Video__author">
             <h3 className="Video__channel">By {video.channel}</h3>
@@ -46,7 +46,7 @@ export default function Video({ video }) {
             </div>
           </div>
         </div>
-        <hr />
+        <hr className="Divider" />
         <p className="Video__description">{video.description}</p>
       </div>
     </>

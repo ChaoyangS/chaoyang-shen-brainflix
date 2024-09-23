@@ -20,9 +20,18 @@ function App() {
   return (
     <>
       <Header />
+
       <Video video={SelectedVideo} />
-      <Comments comments={SelectedVideo.comments} />
-      <Next videosList={filteredVideos} handleVideoSelect={handleVideoSelect} />
+      <div className="Section">
+        <Comments
+          className="Section__comments"
+          comments={SelectedVideo.comments}
+        />
+        <Next
+          videosList={filteredVideos}
+          handleVideoSelect={handleVideoSelect}
+        />
+      </div>
     </>
   );
 }

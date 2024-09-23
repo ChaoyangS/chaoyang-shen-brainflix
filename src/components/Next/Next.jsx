@@ -6,33 +6,29 @@ export default function Next({
   handleVideoSelect,
 }) {
   return (
-    <>
+    <div className="Next">
       <h2 className="Next__title">NEXT VIDEOS</h2>
-      <ul>
-        {videosList.map((video) => {
-          return (
-            <>
-              <img
-                className="Next__image"
-                src={video.image}
-                alt=""
-                Onclick={() => handleVideoSelect(video)}
-              />
-              <ul key={video.id}>
-                <button
+
+      <div className="Next__list">
+        <ul className="Next__ul">
+          {videosList.map((video) => {
+            return (
+              <div className="Next__section">
+                <img className="Next__image" src={video.image} alt="" />
+                {/* <ul key={video.id}> */}
+                <div
                   className="Next__button"
                   onClick={() => handleVideoSelect(video)}
                 >
-                  <div className="">
-                    <h2 className="">{video.title}</h2>
-                    <h3 className="">{video.channel}</h3>
-                  </div>
-                </button>
-              </ul>
-            </>
-          );
-        })}
-      </ul>
-    </>
+                  <h3 className="Next__name">{video.title}</h3>
+                  <h3 className="Next__channel">{video.channel}</h3>
+                </div>
+                {/* </ul> */}
+              </div>
+            );
+          })}
+        </ul>
+      </div>
+    </div>
   );
 }

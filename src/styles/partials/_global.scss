@@ -4,3 +4,17 @@
   margin: 0;
   font-family: "Avenir";
 }
+
+.Divider {
+  color: $SecondaryColor3;
+  background-color: $SecondaryColor3;
+  height: 0.0625rem;
+  border: none;
+  width: 100%;
+  margin: 1rem 0;
+
+  @include tablet {
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+  }
+}
