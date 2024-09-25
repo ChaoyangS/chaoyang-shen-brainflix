@@ -1,9 +1,11 @@
 import "./App.scss";
 import { useState } from "react";
+import HomePage from "./pages/HomePage/HomePage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from "axios";
 
 import Header from "./components/Header/Header";
+import Description from "./components/Description/Description";
 import Next from "./components/Next/Next";
 import Video from "./components/Video/Video";
 import VideoData from "./data/video-details.json";
@@ -21,11 +23,12 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/videos/:dynamic-part" element={<VideoDetailPage />} />
+          {/* <Route path="/videos/:dynamic-part" element={<VideoDetailPage />} /> */}
         </Routes>
       </BrowserRouter>
       <Header />
       <Video video={SelectedVideo} />
+      <Description video={SelectedVideo} />
       <Comments comments={SelectedVideo.comments} />
       <Next videosList={filteredVideos} />
     </>
