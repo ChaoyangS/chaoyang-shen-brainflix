@@ -1,5 +1,6 @@
 import "./App.scss";
 import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header/Header";
 import Next from "./components/Next/Next";
