@@ -1,4 +1,6 @@
 import "./Header.scss";
+import { BrowserRoutee, Routes, Route } from "react-router-dom";
+import axios from "axios";
 
 export default function Header() {
   return (
