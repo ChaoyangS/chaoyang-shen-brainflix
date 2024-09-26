@@ -19,7 +19,7 @@ export default function Video({ video }) {
         </video>
       </div>
 
-      <div className="Video__des">
+      {/* <div className="Video__des">
         <h1 className="Video__title">{video.title}</h1>
         <hr className="Divider Divider1" />
         <div className="Video__sub">
@@ -48,7 +48,7 @@ export default function Video({ video }) {
         </div>
         <hr className="Divider" />
         <p className="Video__description">{video.description}</p>
-      </div>
+      </div> */}
     </>
   );
 }

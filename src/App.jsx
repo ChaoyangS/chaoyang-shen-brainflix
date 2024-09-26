@@ -2,15 +2,18 @@ import "./App.scss";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from "axios";
+import HomePage from "./pages/HomePage/HomePage";
+import UploadPage from "./pages/UploadPage/UploadPage";
 
 import Header from "./components/Header/Header";
+import Description from "./components/Description/Description";
 import Next from "./components/Next/Next";
 import Video from "./components/Video/Video";
 import VideoData from "./data/video-details.json";
 import Comments from "./components/Comments/Comments";
 
 function App() {
-  console.log(VideoData);
+  //console.log(VideoData);
   const [SelectedVideo, setSelectedVideo] = useState(VideoData[0]);
   const handleVideoSelect = (video) => {
     setSelectedVideo(video);
@@ -18,23 +21,27 @@ function App() {
   const filteredVideos = VideoData.filter((video) => {
     return video.id !== SelectedVideo.id;
   });
-  console.log(filteredVideos);
+  //console.log(filteredVideos);
   return (
     <>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/videos/:dynamic-part" element={<VideoDetailPage />} />
+          {/* <Route path="/videos/:dynamic-part" element={<UploadPage />} /> */}
         </Routes>
       </BrowserRouter>
       <Header />
 
       <Video video={SelectedVideo} />
+
       <div className="Section">
-        <Comments
-          className="Section__comments"
-          comments={SelectedVideo.comments}
-        />
+        <div className="Section__desktopdisplay">
+          <Description video={SelectedVideo} />
+          <Comments
+            className="Section__comments"
+            comments={SelectedVideo.comments}
+          />
+        </div>
         <Next
           videosList={filteredVideos}
           handleVideoSelect={handleVideoSelect}

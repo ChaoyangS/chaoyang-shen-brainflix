@@ -1,15 +1,18 @@
 import "./Header.scss";
+import { NavLink } from "react-router-dom";
 
 export default function Header() {
   return (
     <>
       <section className="Header">
         <div className="Header__logoicon">
+          {/* <NavLink to="/"> */}
           <img
             className="Header__logo"
             src="../../src/assets/images/BrainFlix-logo.svg"
             alt=""
           />
+          {/* </NavLink> */}
         </div>
         <div className="Header__searchsection">
           <form action="">
