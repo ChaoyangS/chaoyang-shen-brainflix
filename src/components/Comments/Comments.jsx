@@ -37,7 +37,7 @@ export default function Comments({ comments }) {
             <>
               <div className="Comments__sec">
                 <div className="Comments__avatar"></div>
-                <div className="Comments__section">
+                <div key={comment.id} className="Comments__section">
                   <div className="Comments__namedate">
                     <h3 className="Comments__name">{comment.name}</h3>
                     <h4 className="Comments__date">

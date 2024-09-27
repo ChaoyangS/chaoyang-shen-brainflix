@@ -13,7 +13,7 @@ export default function Next({
         <ul className="Next__ul">
           {videosList.map((video) => {
             return (
-              <div className="Next__section">
+              <div key={video.id} className="Next__section">
                 <img className="Next__image" src={video.image} alt="" />
                 {/* <ul key={video.id}> */}
                 <div

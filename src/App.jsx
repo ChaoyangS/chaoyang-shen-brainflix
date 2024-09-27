@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from "axios";
 import HomePage from "./pages/HomePage/HomePage";
 import UploadPage from "./pages/UploadPage/UploadPage";
+import NotFoundPage from "./pages/NotfoundPage/NotfoundPage";
 
 import Header from "./components/Header/Header";
 import Description from "./components/Description/Description";
@@ -28,6 +29,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           {/* <Route path="/videos/:dynamic-part" element={<UploadPage />} /> */}
+          <Route path="/upload" element={<UploadPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
       <Header />
