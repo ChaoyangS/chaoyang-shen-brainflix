@@ -1,4 +1,5 @@
 import "./Header.scss";
+import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 
 export default function Header() {
@@ -7,11 +8,13 @@ export default function Header() {
       <section className="Header">
         <div className="Header__logoicon">
           {/* <NavLink to="/"> */}
+          {/* <Link to="/"> */}
           <img
             className="Header__logo"
             src="../../src/assets/images/BrainFlix-logo.svg"
             alt=""
           />
+          {/* </Link> */}
           {/* </NavLink> */}
         </div>
         <div className="Header__searchsection">

@@ -10,7 +10,8 @@ import Comments from "../../components/Comments/Comments";
 function HomePage() {
   const { VideoId } = useParams();
   const [Videos, setVideos] = useState([]);
-  const [VideoDetail, setVideoDetail] = useState(null);
+  const [VideoDetail, setVideoDetail] = useState([]);
+  const [CommentsDetail, setCommentsDetail] = useState([]);
 
   const [isError, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -29,7 +30,7 @@ function HomePage() {
       setSelectedVideo(
         response.data.find((video) => video.id === VideoId) || response.data[0]
       );
-      console.log(response.data);
+      console.log("FIRST" + response.data);
       setIsLoading(false);
     } catch (error) {
       setError(true);
@@ -44,7 +45,9 @@ function HomePage() {
         `https://unit-3-project-api-0a5620414506.herokuapp.com/videos/${SelectedVideo.id}?api_key=ff77e192-18c5-4d1e-922d-891738dd5880`
       );
       setVideoDetail(response1.data);
-      console.log(response1.data);
+      setCommentsDetail(response1.data.comments);
+
+      console.log(response1.data.comments);
     } catch (error) {
       console.log("error");
     }
@@ -69,18 +72,16 @@ function HomePage() {
   const filteredVideos = Videos.filter(
     (video) => video.id !== SelectedVideo.id
   );
-  console.log(SelectedVideo.id);
-  console.log(filteredVideos);
+  // console.log(SelectedVideo.id);
+  // console.log(filteredVideos);
+  console.log(VideoDetail.comments);
 
   return (
     <>
       <Header />
       <Video video={SelectedVideo} />
-      {/* <Description video={VideoDetail} /> */}
-      {/* <Comments
-        className="Section__comments"
-        comments={JSON.stringify(VideoDetail).comment}
-      /> */}
+      <Description video={VideoDetail} />
+      <Comments className="Section__comments" comments={CommentsDetail} />
       <Next videosList={filteredVideos} handleVideoSelect={handleVideoSelect} />
     </>
   );

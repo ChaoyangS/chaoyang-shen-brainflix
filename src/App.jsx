@@ -28,12 +28,12 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          {/* <Route path="/videos/:dynamic-part" element={<UploadPage />} /> */}
+          <Route path="/videos/:VideoId" element={<HomePage />} />
           <Route path="/upload" element={<UploadPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
-      <Header />
+      {/* <Header />
 
       <Video video={SelectedVideo} />
 
@@ -49,7 +49,7 @@ function App() {
           videosList={filteredVideos}
           handleVideoSelect={handleVideoSelect}
         />
-      </div>
+      </div> */}
     </>
   );
 }
